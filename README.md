@@ -1,2 +1,2 @@
-# NewtonSystemSolver
-Python implementation of the Newton-Raphson method for solving systems of nonlinear equations.
+# Newton System Solver
+Python implementation of the Newton-Raphson method for solving systems of nonlinear equations. This tool allows users to input custom functions, specify initial guesses, and define error tolerances to iteratively find solutions. The repository includes functionality for generating Jacobian matrices, calculating error metrics, and tracking iterations for both absolute and relative error convergence.
