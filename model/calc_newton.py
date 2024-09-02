@@ -8,37 +8,37 @@
 #  Python Version: 3.12.3
 #  GitHub:         Claudino2001
 # ========================================================
-# DESCRIÇÃO DO CÓDIGO:
-# 1. Perguntar o número de funções (duas ou tres)
-# 2. Irá solicitar o erro:
-#       Entrada esperada: 0,001, 0,1, 0,0001, 0,00000001
-# 3. Pergutar o chute inicial para o usuário:
-#       Para o caso de duas funções será solicitado dois numeros (chute_x e chute_y);
-#       Para o caso de tres funções será solicitado tres numeros(chute_x, chute_y e chute_z).
-#       Exemplo de chutes que serão inseridas: 0,5, 1/2, 1000, 0, 1, 10
-# 4. Então o usuário irá fornecer as funções (funcao_1 e funcao_2 ou funcao_1, funcao_2 e funcao_3)
-#       Exemplo das funções que serão inseridas: 2+SEN(x), (-x+y-COS(z)), (2*x-x-COS(y))
-# 5. Proximo passo é substituir o chute nas funções E montar o vetor com esse resultado.
-#       Exemplo:
-#           funcao_1 = 2+SEN(x)
-#           chute_x = 1
-#           Cria-se um vetor para F(x) onde F[0] tera a resultado de 2+SEN(1)
-#           E assim para todos.
-# 6. Criar uma matriz Jacobiana J(x). Ou seja pegar cada função e derivar em relação a x y e z.
-#       Montando assim uma matriz.
-# 7. Achar a inversa dessa matriz Jacobiana.
-# 8. Uma vez com a matriz jacobiana J(x)^{-1} foi encontrada o proximo passo é encontrar o DeltaX.
-#       O DeltaX é  resultado da multiplicação das duas matrizes.
-#       São elas: (J(x)^{-1}) * (-F(x)). (Importante notar que é -F(x)).
-# 9. Uma vez encontrado a matriz DeltaX que representa o resultado de x y e z.
-#       O chutes agora passam a assumir o valor do chute anterior + os valores de deltax.
-#       o chute_x por exemplo seria: chute_x + DeltaX na primeira posição.
-# 10. Agora _todo o processo se repete novamente a partir da 5 etapa.
-#       O loop so devera parar quando a o erro for menor ou igual ao ERRO absoluto e o erro relativo.
-#       Ou seja mostrar quantas interação do loop foram necessárias para se chegar no erro esperado.
-#       Erro relativo = Ultimo_Valor_do_chute - penultimo_Valor_do_chute/Ultimo_Valor_do_chute
-#       Erro absoluto = Ultimo_Valor_do_chute - penultimo_Valor_do_chute
-# ===============================================================
+#  DESCRIÇÃO DO CÓDIGO:
+#  1. Perguntar o número de funções (duas ou tres)
+#  2. Irá solicitar o erro:
+#        Entrada esperada: 0,001, 0,1, 0,0001, 0,00000001
+#  3. Pergutar o chute inicial para o usuário:
+#        Para o caso de duas funções será solicitado dois numeros (chute_x e chute_y);
+#        Para o caso de tres funções será solicitado tres numeros(chute_x, chute_y e chute_z).
+#        Exemplo de chutes que serão inseridas: 0,5, 1/2, 1000, 0, 1, 10
+#  4. Então o usuário irá fornecer as funções (funcao_1 e funcao_2 ou funcao_1, funcao_2 e funcao_3)
+#        Exemplo das funções que serão inseridas: 2+SEN(x), (-x+y-COS(z)), (2*x-x-COS(y))
+#  5. Proximo passo é substituir o chute nas funções E montar o vetor com esse resultado.
+#        Exemplo:
+#            funcao_1 = 2+SEN(x)
+#            chute_x = 1
+#            Cria-se um vetor para F(x) onde F[0] tera a resultado de 2+SEN(1)
+#            E assim para todos.
+#  6. Criar uma matriz Jacobiana J(x). Ou seja pegar cada função e derivar em relação a x y e z.
+#        Montando assim uma matriz.
+#  7. Achar a inversa dessa matriz Jacobiana.
+#  8. Uma vez com a matriz jacobiana J(x)^{-1} foi encontrada o proximo passo é encontrar o DeltaX.
+#        O DeltaX é  resultado da multiplicação das duas matrizes.
+#        São elas: (J(x)^{-1}) * (-F(x)). (Importante notar que é -F(x)).
+#  9. Uma vez encontrado a matriz DeltaX que representa o resultado de x y e z.
+#        O chutes agora passam a assumir o valor do chute anterior + os valores de deltax.
+#        o chute_x por exemplo seria: chute_x + DeltaX na primeira posição.
+#  10. Agora _todo o processo se repete novamente a partir da 5 etapa.
+#        O loop so devera parar quando a o erro for menor ou igual ao ERRO absoluto e o erro relativo.
+#        Ou seja mostrar quantas interação do loop foram necessárias para se chegar no erro esperado.
+#        Erro relativo = Ultimo_Valor_do_chute - penultimo_Valor_do_chute/Ultimo_Valor_do_chute
+#        Erro absoluto = Ultimo_Valor_do_chute - penultimo_Valor_do_chute
+#  ===============================================================
 
 import numpy as np
 from sympy import symbols, diff, sin, cos, exp
