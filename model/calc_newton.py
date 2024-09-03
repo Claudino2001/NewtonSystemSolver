@@ -148,7 +148,3 @@ def main():
     print(f'Número total de iterações: {iteration_count}')
     print(f'Iteração onde o erro absoluto foi atingido: {abs_error_iteration}')
     print(f'Iteração onde o erro relativo foi atingido: {rel_error_iteration}')
-
-
-if __name__ == "__main__":
-    main()

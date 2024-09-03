@@ -1,11 +1,10 @@
-# controller/controller.py
-
 from model.calc_newton import newton_method
 from view.simplegui import criar_janela
 import PySimpleGUI as sg
 from sympy import symbols, sin, cos, exp
 
-def main():
+
+def controller_main():
     # Cria a janela da GUI
     window = criar_janela()
 
@@ -60,7 +59,3 @@ def main():
             window['-RESULTADO-'].update(output)
 
     window.close()
-
-
-if __name__ == "__main__":
-    main()
